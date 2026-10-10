@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         heroSkullTap.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            playJawAnimation(false);
+            playJawAnimation(true);
         });
     }
 
