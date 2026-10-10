@@ -401,20 +401,20 @@ body {
     font-size: 1.05rem;
 }
 
-.portfolio-video-link {
-    text-align: center;
-    margin: -1.25rem 0 2.5rem;
-}
-
-.portfolio-video-link a {
+.section-lead .portfolio-video-link,
+a.portfolio-video-link {
+    display: inline-block;
+    margin-top: 0.85rem;
     color: #7ec8f0;
     font-weight: 600;
+    font-size: 1rem;
     text-decoration: none;
     border-bottom: 1px solid rgba(126, 200, 240, 0.45);
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.portfolio-video-link a:hover {
+.section-lead .portfolio-video-link:hover,
+a.portfolio-video-link:hover {
     color: #fff;
     border-bottom-color: rgba(255, 255, 255, 0.7);
 }
@@ -1119,7 +1119,7 @@ body {
     margin: 0 auto;
 }
 
-.contact-actions .contact-action--email {
+.contact-actions .contact-action--wide {
     grid-column: 1 / -1;
 }
 
@@ -1127,6 +1127,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
+    width: 100%;
+    box-sizing: border-box;
     padding: 1.5rem 1.6rem;
     border-radius: var(--border-radius);
     text-decoration: none;
@@ -1135,6 +1137,7 @@ body {
     border: 1px solid transparent;
     min-height: 96px;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .contact-action__label {
@@ -1150,14 +1153,9 @@ body {
     font-weight: 600;
 }
 
-.contact-action--telegram,
-.contact-action--telegram-video {
-    background: rgba(44, 165, 224, 0.2);
-    border-color: rgba(44, 165, 224, 0.45);
-}
-
-.contact-action--telegram-video {
-    background: rgba(44, 165, 224, 0.12);
+.contact-action--telegram {
+    background: rgba(44, 165, 224, 0.22);
+    border-color: rgba(44, 165, 224, 0.5);
 }
 
 .contact-action--whatsapp {
