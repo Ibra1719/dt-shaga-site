@@ -401,6 +401,24 @@ body {
     font-size: 1.05rem;
 }
 
+.portfolio-video-link {
+    text-align: center;
+    margin: -1.25rem 0 2.5rem;
+}
+
+.portfolio-video-link a {
+    color: #7ec8f0;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(126, 200, 240, 0.45);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.portfolio-video-link a:hover {
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+}
+
 .hero-scroll-indicator a {
     display: inline-block;
     transition: var(--transition);
@@ -1101,6 +1119,10 @@ body {
     margin: 0 auto;
 }
 
+.contact-actions .contact-action--email {
+    grid-column: 1 / -1;
+}
+
 .contact-action {
     display: flex;
     flex-direction: column;
@@ -1128,9 +1150,14 @@ body {
     font-weight: 600;
 }
 
-.contact-action--telegram {
+.contact-action--telegram,
+.contact-action--telegram-video {
     background: rgba(44, 165, 224, 0.2);
     border-color: rgba(44, 165, 224, 0.45);
+}
+
+.contact-action--telegram-video {
+    background: rgba(44, 165, 224, 0.12);
 }
 
 .contact-action--whatsapp {
