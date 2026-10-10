@@ -46,6 +46,52 @@
         max-width: 576px;
     }
 
+    .hero-skull-tap {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 54%;
+        transform: translate(-50%, -50%);
+        width: min(78vw, 340px);
+        height: min(52vh, 360px);
+        z-index: 1;
+        border: none;
+        padding: 0;
+        background: transparent;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        border-radius: 50%;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .hero-content a {
+        pointer-events: auto;
+    }
+
+    .hero-background::after {
+        animation: skullInvite 2.6s ease-in-out infinite;
+    }
+
+    .hero-background.jaw-animate::after {
+        animation: jawPulse 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes skullInvite {
+        0%, 100% {
+            transform: scale(1) translateY(0);
+            filter: drop-shadow(0 0 40px rgba(110, 100, 205, 0.2));
+        }
+        50% {
+            transform: scale(1.04) translateY(-4px);
+            filter: drop-shadow(0 0 55px rgba(110, 100, 205, 0.45));
+        }
+    }
+
     .nav-item--desktop {
         display: none;
     }

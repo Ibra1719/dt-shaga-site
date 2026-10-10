@@ -222,6 +222,10 @@ body {
     overflow: hidden;
 }
 
+.hero-skull-tap {
+    display: none;
+}
+
 .hero-background {
     position: absolute;
     top: 0;

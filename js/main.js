@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = locked ? 'hidden' : '';
     }
 
-    
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.nav');
 
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    
     if (header) {
         let ticking = false;
         const onScroll = () => {
@@ -55,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         onScroll();
     }
 
-    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (anchor.id === 'hero-arrow') return;
 
@@ -71,26 +68,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    
     const heroArrow = document.getElementById('hero-arrow');
+    const heroSkullTap = document.getElementById('hero-skull-tap');
     const heroBackground = document.querySelector('.hero-background');
+
+    function playJawAnimation(scrollAfter) {
+        if (!heroBackground) return;
+        heroBackground.classList.remove('jaw-animate');
+        requestAnimationFrame(() => {
+            heroBackground.classList.add('jaw-animate');
+        });
+        setTimeout(() => heroBackground.classList.remove('jaw-animate'), 1200);
+        if (scrollAfter) {
+            setTimeout(() => scrollToSection('#about'), 400);
+        }
+    }
 
     if (heroArrow && heroBackground) {
         heroArrow.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
-
-            heroBackground.classList.remove('jaw-animate');
-            requestAnimationFrame(() => {
-                heroBackground.classList.add('jaw-animate');
-            });
-
-            setTimeout(() => heroBackground.classList.remove('jaw-animate'), 1200);
-            setTimeout(() => scrollToSection('#about'), 400);
+            playJawAnimation(true);
         }, true);
     }
 
-    
+    if (heroSkullTap && heroBackground) {
+        heroSkullTap.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            playJawAnimation(false);
+        });
+    }
+
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -111,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    
     const gallery = document.getElementById('gallery-lightbox');
     const galleryImg = gallery && gallery.querySelector('.gallery-lightbox__img');
     const galleryTitle = gallery && gallery.querySelector('.gallery-lightbox__title');
@@ -122,6 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let galleryItems = [];
     let galleryIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
     function renderGallerySlide() {
         if (!galleryImg || !galleryItems.length) return;
@@ -188,6 +198,20 @@ document.addEventListener('DOMContentLoaded', function () {
         gallery.addEventListener('click', function (e) {
             if (e.target === gallery) closeGallery();
         });
+
+        gallery.addEventListener('touchstart', function (e) {
+            if (!gallery.classList.contains('is-open') || !e.changedTouches.length) return;
+            touchStartX = e.changedTouches[0].clientX;
+            touchStartY = e.changedTouches[0].clientY;
+        }, { passive: true });
+
+        gallery.addEventListener('touchend', function (e) {
+            if (!gallery.classList.contains('is-open') || !e.changedTouches.length) return;
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            const dy = e.changedTouches[0].clientY - touchStartY;
+            if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+            showGalleryDelta(dx < 0 ? 1 : -1);
+        }, { passive: true });
     }
 
     document.addEventListener('keydown', function (e) {
