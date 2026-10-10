@@ -56,7 +56,7 @@
                 </ul>
             </nav>
             <div class="social-links">
-                <a href="https://wa.me/79604284559?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+                <a href="https://wa.me/79604284559?text=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <g transform="translate(4 4)" fill="none" fill-rule="evenodd">
                             <circle fill="#25D366" cx="12" cy="12" r="12"/>
@@ -88,6 +88,7 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-background"></div>
+            <button type="button" class="hero-skull-tap" id="hero-skull-tap" aria-label="Анимация модели"></button>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text-wrapper">
@@ -422,7 +423,7 @@
                         <span class="contact-action__label">Telegram</span>
                         <span class="contact-action__value">@dentaltechshaga</span>
                     </a>
-                    <a href="https://wa.me/79604284559?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer" class="contact-action contact-action--whatsapp">
+                    <a href="https://wa.me/79604284559?text=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer" class="contact-action contact-action--whatsapp">
                         <span class="contact-action__label">WhatsApp</span>
                         <span class="contact-action__value">+7 (960) 428-45-59</span>
                     </a>
@@ -469,8 +470,13 @@
         <a href="https://t.me/dentaltechshaga" target="_blank" rel="noopener noreferrer" class="float-cta__btn float-cta__btn--telegram" aria-label="Написать в Telegram">
             <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><circle fill="#2CA5E0" cx="16" cy="16" r="12"/><path fill="#fff" d="m13.556 18.362 5.47 4.042c.625.344 1.076.166 1.231-.58l2.228-10.494c.229-.915-.347-1.329-.944-1.059L8.46 15.316c-.892.358-.887.856-.162 1.078l3.357 1.047 7.769-4.9c.366-.222.703-.103.427.142"/></svg>
         </a>
-        <a href="https://wa.me/79604284559?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!" target="_blank" rel="noopener noreferrer" class="float-cta__btn float-cta__btn--whatsapp" aria-label="Написать в WhatsApp">
-            <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><circle fill="#25D366" cx="16" cy="16" r="12"/><path fill="#fff" d="M16.97 10.012A5.083 5.083 0 0 0 12.026 8c-2.84 0-5.165 2.3-5.167 5.138 0 .9.24 1.78.69 2.55L7 19l2.73-.71a5.2 5.2 0 0 0 2.29.53h.003c2.84 0 5.168-2.3 5.17-5.14a5.09 5.09 0 0 0-1.513-3.668"/></svg>
+        <a href="https://wa.me/79604284559?text=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer" class="float-cta__btn float-cta__btn--whatsapp" aria-label="Написать в WhatsApp">
+            <svg viewBox="0 0 32 32" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g transform="translate(4 4)" fill="none" fill-rule="evenodd">
+                    <circle fill="#25D366" cx="12" cy="12" r="12"/>
+                    <path d="M15.207 13.39c-.175-.088-1.03-.506-1.19-.564-.16-.059-.276-.088-.392.088-.115.172-.45.562-.551.677-.102.114-.204.123-.377.044-.175-.087-.737-.271-1.402-.866a5.292 5.292 0 0 1-.968-1.208c-.101-.175-.011-.27.076-.358.08-.08.175-.202.263-.305.085-.106.113-.176.173-.29.059-.122.029-.219-.014-.306-.044-.087-.392-.944-.538-1.286-.14-.341-.284-.298-.392-.298-.1-.009-.217-.009-.333-.009a.658.658 0 0 0-.465.21c-.16.175-.61.595-.61 1.444 0 .848.624 1.67.711 1.793.087.114 1.228 1.864 2.975 2.617.417.175.741.28.994.367.417.132.796.113 1.097.07.335-.053 1.03-.42 1.176-.832.149-.411.149-.752.105-.831-.043-.079-.158-.123-.333-.201m-3.176 4.341h-.01a5.835 5.835 0 0 1-2.948-.805l-.21-.124-2.188.568.586-2.126-.14-.219a5.757 5.757 0 0 1-.884-3.068c0-3.176 2.6-5.766 5.8-5.766a5.76 5.76 0 0 1 4.096 1.697 5.71 5.71 0 0 1 1.696 4.078c-.002 3.175-2.601 5.766-5.795 5.766M16.97 7.012A7.083 7.083 0 0 0 12.026 5c-3.84 0-6.965 3.111-6.967 6.938 0 1.222.32 2.415.93 3.467L5 19l3.695-.964a7.036 7.036 0 0 0 3.331.844h.004c3.841 0 6.968-3.112 6.97-6.939a6.88 6.88 0 0 0-2.039-4.906" fill="#FFF" fill-rule="nonzero"/>
+                </g>
+            </svg>
         </a>
     </div>
 
@@ -488,7 +494,7 @@
                 </div>
                 <div class="footer-social">
                     <a href="https://t.me/dentaltechshaga" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a>
-                    <a href="https://wa.me/79604284559" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
+                    <a href="https://wa.me/79604284559?text=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
                 </div>
             </div>
             <div class="footer-bottom">
