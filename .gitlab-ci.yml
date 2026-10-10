@@ -1,0 +1,10 @@
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -R index.html favicon.png css js images works public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
